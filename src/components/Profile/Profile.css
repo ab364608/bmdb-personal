@@ -1,0 +1,8 @@
+.profile-container {
+    padding-top:10vh;
+    width: 75vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}

@@ -1,0 +1,97 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    width: 100vw;
+    background: gray;
+    position: fixed;
+  }
+  
+  .title {
+    margin-left: 5vw
+  }
+  
+  .sidebar-button {
+    height: 7vh;
+    width: 5vw;
+  }
+  
+  .nav-action {
+    width: 35vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .sidemenu {
+    background: gray;
+    position: fixed;
+    right: 0;
+    top: 8vh;
+    width: 0;
+    height: 40vh;
+    transition: 1000ms width ease-in-out;
+  }
+  
+  .sidemenu-open {
+    background: gray;
+    position: fixed;
+    right: 0;
+    top: 8vh;
+    width: 20vw;
+    height: 40vh;
+    transition: 1000ms width ease-in-out;
+  }
+  
+  .sidemenu-list {
+    list-style: none;
+    width: 13vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .sidemenu-logout {
+    width: 13vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+  }
+
+  .welcome {
+    font-size: 1em;
+  }
+
+  @media (max-width: 1000px) {
+    .title {
+      display: none;
+    }
+    .nav-action {
+      width: 100vw;
+    }
+    .login-input {
+      width: 10vw;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .sidemenu-list {
+      position: relative;
+      right: 4vw;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .sidemenu-open {
+      width: 30vw;
+    }
+    .login-input {
+      width: 20vw;
+    }
+  }
