@@ -12,6 +12,8 @@ const AM = require('./middleware/authMiddleware');
 
 const PC = require('./controllers/profileController');
 
+const MC = require('./controllers/fav_moviesController');
+
 massive(CONNECTION_STRING)
     .then(db => {
         app.set('db', db)
@@ -32,8 +34,12 @@ app.use(
 
 app.use(express.json());
 
+//Movies
+app.post('/api/movies', MC.addFavMovies);
+
 //Profile
-app.put('/api/profile/:id', PC.editUserProfile)
+app.put('/api/profile/:id', PC.editUserProfile);
+app.delete('/api/profile/:id', PC.deleteUserProfile)
 
 //Authentication
 app.use(AM.checkUserExists);

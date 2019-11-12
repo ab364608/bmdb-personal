@@ -12,6 +12,15 @@ const editUserProfile = async (req, res) => {
     res.status(200).json(editedProfile)
 }
 
+const deleteUserProfile = async (req, res) => {
+    const db = req.app.get('db');
+    const { id } = req.params;
+
+    const deletedUser = await db.delete_user(id);
+    res.status(200).json(deletedUser);
+}
+
 module.exports = {
-    editUserProfile
+    editUserProfile,
+    deleteUserProfile
 }

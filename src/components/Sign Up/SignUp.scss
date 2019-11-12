@@ -1,0 +1,61 @@
+@import "../NavBar/Navbar.scss";
+
+.below__nav {
+    padding-top: 10vh;
+}
+
+.register-form {
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.register-inputs {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 6vh;
+}
+
+.register-actions {
+    width: 20vw;
+    height: 6vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.register-buttons {
+    height: 4vh;
+    width: 8vw;
+    font-size: 1em;
+    background: $a;
+    color: $b;
+    border: none;
+    box-shadow: 4px 4px 10px $a
+}
+
+.register-field {
+    width: 20vw;
+    height: 4vh;
+    color: $b;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+@media (max-width: 400px) {
+    .register-field {
+        width: 35vw;
+        font-size: .8em;
+    }
+    .register-actions {
+        width: 60vw;
+    }
+    .register-buttons {
+        width: 25vw;
+    }
+}

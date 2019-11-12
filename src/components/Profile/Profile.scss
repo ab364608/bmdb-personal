@@ -1,0 +1,73 @@
+@import '../NavBar/Navbar.scss';
+
+.profile-container {
+    background: $c;
+    padding-top:10vh;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.user-profile {
+    display: flex;
+    width: 40vw;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.profile-title {
+    color: white
+}
+
+.user-profile button {
+    border: none;
+    background: none;
+    color: red;
+    text-decoration: underline;
+    font-size: 1em;
+}
+
+.ifClicked {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.changeDB .editDB {
+    height: 4vh;
+    width: 16vw;
+    font-size: 1em;
+    background: $a;
+    color: $b;
+    border: none;
+    box-shadow: 4px 4px 10px $a
+}
+
+.changeDB h4 {
+    color: white;
+}
+
+.execute {
+    width: 6vw;
+    height: 4vh;
+    font-size: 1em;
+    background: $a;
+    color: $b;
+    border: none;
+    box-shadow: 4px 4px 10px $a;
+}
+
+.editInputs {
+    width: 20vw;
+    height: 3vh;
+    color: $b;
+    font-size: .8em;
+    font-weight: 600;
+}
+
+@media (max-width: 400px) {
+    
+}

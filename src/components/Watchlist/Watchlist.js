@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-class FavMovies extends Component {
+class Watchlist extends Component {
     render() {
         return (
             <div>
@@ -11,4 +11,4 @@ class FavMovies extends Component {
     }
 }
 
-export default FavMovies;
+export default Watchlist;

@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { resetInputs, updateState } from '../../donald ducks/AuthReducer/AuthReducer';
+import { resetInputs, updateState, userLogin } from '../../donald ducks/AuthReducer/AuthReducer';
 import { connect } from 'react-redux';
+import './SignUp.scss'
 
 class SignUp extends Component {
 
-    state = {
-        error: false
-    }
 
     clickGoBack = () => {
         this.props.resetInputs();
@@ -18,32 +16,34 @@ class SignUp extends Component {
         this.props.updateState({[e.target.name]: e.target.value})
     }
 
-    registerUser = e => {
+    registerUser = async e => {
         e.preventDefault();
-        axios.post('/auth/register', {
+        await axios.post('/auth/register', {
             username: this.props.username,
             password: this.props.password,
             name: this.props.name
-        })
-        .then(() => {
-            this.props.history.push('/');
-        })
-        .catch(() => {
-            this.setState({error: true});
-        })
+        });
+        await this.props.userLogin(this.props.username, this.props.password, this.props.loggedIn)
+        this.props.history.push('/');
     }
 
     render() {
         // console.log(this.props.username)
         return (
-            <div className='register'>
+            <div className="home-background">
+            <div className='below__nav'>
                 <form className='register-form' type='submit'>
+                    <div className='register-inputs'>
                     <input className='register-field' placeholder='Full Name' name='name' onChange={this.handleChange}></input>
                     <input className='register-field' placeholder='Create Username' name='username' onChange={this.handleChange}></input>
                     <input className='register-field' type="password" placeholder='Create Password' name='password' onChange={this.handleChange}></input>
-                    <button onClick={this.registerUser}>Sign Up!</button>
-                    <button onClick={this.clickGoBack}>Go Back</button>
+                    </div>
+                    <div className='register-actions'>
+                    <button className='register-buttons' onClick={this.clickGoBack}>Go Back</button>
+                    <button className='register-buttons' onClick={this.registerUser}>Sign Up!</button>
+                    </div>
                 </form>
+            </div>
             </div>
         )
     }
@@ -57,4 +57,4 @@ const mapStateToProps = reduxState => {
     }
 }
 
-export default connect(mapStateToProps, {resetInputs, updateState})(SignUp);
+export default connect(mapStateToProps, {resetInputs, updateState, userLogin})(SignUp);

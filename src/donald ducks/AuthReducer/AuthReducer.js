@@ -14,6 +14,7 @@ const UPDATE_STATE = 'UPDATE_STATE';
 const RESET_INPUTS = 'RESET_INPUTS';
 const USER_LOGIN = 'USER_LOGIN';
 const USER_LOGOUT = 'USER_LOGOUT';
+const EDIT_USER_PROFILE = 'EDIT_USER_PROFILE';
 
 export const updateState = e => {
     return {
@@ -45,6 +46,18 @@ export const userLogout = () => {
     }
 }
 
+export const editUserProfile = (id, newUsername, newPassword, newName) => {
+    return {
+        type: EDIT_USER_PROFILE,
+        payload: axios.put(`/api/profile/${id}`, {
+            username: newUsername,
+            password: newPassword,
+            name: newName
+        })
+    }
+}
+
+
 export default function authReducer(state = initialState, action) {
     const { payload, type } = action;
 
@@ -60,7 +73,11 @@ export default function authReducer(state = initialState, action) {
         case `${USER_LOGOUT}_PENDING`:
             return { ...state, loading: true };
         case `${USER_LOGOUT}_FULFILLED`:
-            return { ...state, loading: false, user: {}, loggedIn: false }
+            return { ...state, loading: false, user: {}, loggedIn: false };
+        case `${EDIT_USER_PROFILE}_PENDING`:
+            return { ...state, loading: true };
+        case `${EDIT_USER_PROFILE}_FULFILLED`:
+            return { ...state, loading: false, user: payload.data[0], username: payload.data[0].username, password: payload.data[0].password, name: payload.data[0].name }
 
         default:
             return state;

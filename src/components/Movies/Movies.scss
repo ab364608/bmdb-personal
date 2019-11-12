@@ -1,0 +1,66 @@
+@import "../NavBar//Navbar.scss";
+
+.home-background {
+    background: $c;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.card {
+    margin-top: 5vh;
+}
+
+.search-bar {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    margin-top: 5vh;
+    height: 6vh;
+    width: 40vw;
+    font-size: 2em;
+    font-weight: 700;
+    color: $b
+}
+
+.default-text {
+    margin-left: 5vh;
+    font-size: 2em;
+    color: white;
+    text-shadow: 4px 4px 6px $b;
+}
+
+.search-actions {
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: none;
+}
+
+.search-actions button {
+    border: none;
+    background: none;
+    color: $b;
+    font-size: 1.2em;
+    text-decoration: underline;
+    font-weight: 650;
+}
+
+@media (max-width: 400px) {
+    .search-actions {
+        width: 80vw;
+    }
+    .search-actions button {
+        font-size: .8em;
+    }
+    .default-text {
+        font-size: 1.2em;
+    }
+    .search {
+        font-size: 1.2em;
+        height: 4vh;
+    }
+}

@@ -1,0 +1,141 @@
+@import "../Navbar/Navbar";
+
+.home-background {
+    background: $c
+}
+
+.contain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    // margin-left: 5vw;
+    // justify-content: center;
+}
+
+.card-list {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    height: 50vh;
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: $b 3px solid;
+    margin-bottom: 5vh;
+    background: $a;
+    box-shadow: 8px 8px 16px $b
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    color: white;
+}
+
+.add-watchlist {
+    display: flex;
+    flex-direction: column;
+    width: none;
+}
+
+.watchlist {
+    width: 14vw;
+    height: 3vh;
+    font-size: 1em;
+    background: $c;
+    color: $b;
+    border: none;
+    box-shadow: 4px 4px 10px $c
+}
+
+.showing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding-top: 10vh;
+    color: white;
+    text-decoration: underline;
+    text-shadow: 4px 4px 6px $b;
+}
+
+.summary {
+    overflow: scroll;
+    width: 45vw;
+    height: 20vh;
+}
+
+@media (max-width: 1000px) {
+    .card {
+        display: flex;
+        /* flex-direction: column; */
+        /* margin-top: 4vh; */
+    }
+    /* .now-showing {
+        font-size: .7em;
+        margin-left: 15vw;
+    } */
+}
+
+@media (max-width: 800px) {
+    .now-showing {
+        font-size: .8em;
+        margin-left: 10vw;
+    }
+    .poster {
+        height: 40vh;
+        width: 25vw;
+    }
+}
+
+@media(max-width: 600px) {
+    .poster {
+        height: 30vh;
+        width: 30vw;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        margin-top: 4vh;
+        height: 60vh;
+    }
+    .summary {
+        height: 8vh;
+        font-size: .7em
+    }
+    .now-showing {
+        font-size: .5em;
+        margin-left: 10vw;
+    }
+    .the-title {
+        font-size: 1em;
+    }
+    .info {
+        display: flex;
+        align-items: center;
+    }
+    .critic-rating {
+        font-size: .8em;
+    }
+    .poster {
+        height: 30vh;
+        width: 40vw;
+    }
+    .watchlist {
+        font-size: .7em;
+        width: 30vw;
+    }
+    .showing h1 {
+        font-size: 1.2em;
+    }
+}

@@ -33,7 +33,7 @@ const login = async (req, res) => {
     const existingUser = await bcrypt.compare(password, checkedUser[0].password);
     if(existingUser) {
         req.session.user = {
-            id: checkedUser[0].id,
+            id: checkedUser[0].user_id,
             username: checkedUser[0].username,
             name: checkedUser[0].name
         };

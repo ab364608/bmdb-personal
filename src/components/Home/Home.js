@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import "./Home.css"
-import { connect } from 'react-redux';
+import MappedHome from './MappedHome/MappedHome';
 
 class Home extends Component {
     constructor() {
@@ -18,40 +17,23 @@ class Home extends Component {
     }
 
     render() {
-        console.log(this.state.nowShowing)
         const mappedMovies = this.state.nowShowing.map((movie, i) => {
             return (
-                <div>
-                    <div className='movie-card'>
-                        <div key={i} className='movie-info'>
-                            <h2 className='movie-title'>{movie.title}</h2>
-                            <h3 className='critic-rating'>Critic's Rating: {movie.vote_average}</h3>
-                            <h4 className='summary'>Summary: {movie.overview}</h4>
-                        </div>
-                        <div>
-                            <img className='poster' src={"https://image.tmdb.org/t/p/w200" + movie.poster_path} alt='poster' />
-                            {this.props.loggedIn === true ? <button>Add To Watchlist</button> : null}
-                            
-                        </div>
-                    </div>
-                </div>
+                <MappedHome 
+                movie={movie}
+                key={i}
+                />
             )
         })
         return (
-            <div>
-                <div className='now-showing'>
+            <div className="home-background">
+                <div className='showing'>
                     <h1>Now Showing in Theaters Near You</h1>
                 </div>
-                <div className="movie-contain">{mappedMovies}</div>
+                <div className="contain">{mappedMovies}</div>
             </div>
         )
     }
 }
 
-const mapStateToProps = reduxState => {
-    return {
-        loggedIn: reduxState.authReducer.loggedIn
-    }
-}
-
-export default connect(mapStateToProps)(Home);
+export default Home;

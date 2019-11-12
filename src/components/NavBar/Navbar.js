@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.css';
+import './Navbar.scss';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userLogin, updateState, userLogout } from '../../donald ducks/AuthReducer/AuthReducer';
@@ -15,7 +15,7 @@ class Navbar extends React.Component {
     }
 
     async componentDidMount() {
-        await this.setState({open: true})
+        await this.setState({ open: true })
     }
 
     menuAction = () => {
@@ -28,6 +28,9 @@ class Navbar extends React.Component {
 
     clickLogin = () => {
         this.props.userLogin(this.props.username, this.props.password, this.props.loggedIn)
+            .then(() => {
+                this.closeSidebar();
+            })
             .catch(() => {
                 this.setState({ error: true });
             })
@@ -35,16 +38,42 @@ class Navbar extends React.Component {
 
     clickLogout = () => {
         this.props.userLogout().then(() => {
-            this.props.updateState()
+            this.props.updateState({
+                username: '',
+                password: '',
+                name: ''
+            })
+            this.props.history.push('/')
+            this.closeSidebar()
         })
     }
 
     closeSidebar = () => {
-        this.setState({open: false})
+        this.setState({ open: false })
+    }
+
+    handleWatchlist = () => {
+        this.props.history.push('/watchlist');
+        this.closeSidebar();
     }
 
     handleViewProfile = () => {
         this.props.history.push(`/profile/${this.props.username}`);
+        this.closeSidebar();
+    }
+
+    handleSignUp = () => {
+        this.props.history.push('/signup');
+        this.closeSidebar();
+    }
+
+    handleMovies = () => {
+        this.props.history.push('/movies');
+        this.closeSidebar();
+    }
+
+    handleTVSeries = () => {
+        this.props.history.push('/tv');
         this.closeSidebar();
     }
 
@@ -57,11 +86,11 @@ class Navbar extends React.Component {
         return (
             <div className="App">
                 <nav className='navBar'>
-                    <h1 className='title'>BMDb</h1>
+                    <h1 className='nav-title'>BMDb</h1>
                     <ul className='nav-action'>
-                        <Link to='/'><h2>Home</h2></Link>
-                        <Link to='/movies'><h2>Movies</h2></Link>
-                        <Link to='/tv'><h2>TV Series</h2></Link>
+                        <Link to='/'><button>Home</button></Link>
+                        <button onClick={this.handleMovies}>Movies</button>
+                        <button onClick={this.handleTVSeries}>TV Series</button>
                         <img className='sidebar-button'
                             src='https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg'
                             alt='sidebar'
@@ -74,15 +103,14 @@ class Navbar extends React.Component {
                         <input className='login-input' placeholder='Username' name='username' onChange={this.handleChange} />
                         <input className='login-input' placeholder='Password' type="password" name='password' onChange={this.handleChange} />
                         <button className='sidemenu-action' onClick={this.clickLogin}>Log In</button>
-                        <li className='register-text'>Or</li>
-                        <Link to='/signup'><button className='sidemenu-action' onClick={this.closeSidebar}>Sign Up</button></Link>
+                        <li className='register-text'>OR</li>
+                        <button className='sidemenu-action' onClick={this.handleSignUp}>Sign Up</button>
                     </ul> : <ul className='sidemenu-logout'>
-                        <h2 className='welcome'>Welcome,<br/> {this.props.name}</h2>
-                        <button onClick={this.handleViewProfile}>View Profile</button>
-                        <Link to='/favs/movies'><button onClick={this.closeSidebar}>Movie Watchlist</button></Link>
-                        <Link to='/favs/tv'><button onClick={this.closeSidebar}>TV Series Watchlist</button></Link>
-                        <button onClick={this.clickLogout}>Logout</button>
-                    </ul>}
+                            <h2 className='welcome'>Welcome,<br /> {this.props.name}</h2>
+                            <button onClick={this.handleViewProfile}>View Profile</button>
+                            <button onClick={this.handleWatchlist}>Watchlist</button>
+                            <button onClick={this.clickLogout}>Logout</button>
+                        </ul>}
 
                 </div>
             </div>
