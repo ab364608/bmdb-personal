@@ -1,0 +1,28 @@
+@import '../Home/Home';
+@import '../NavBar/Navbar';
+
+.nowshowing {
+    @include nowshowing();
+    padding-top: 5vh;
+    justify-content: space-evenly;
+    height: 30vh;
+}
+
+.nowshowing-goback {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nowshowing-goback h1 {
+    font-family: $roboto;
+}
+
+.zipcode {
+    width: 20vw;
+    height: 3vh;
+    color: $b;
+    font-size: .8em;
+    font-weight: 600;
+    font-family: $roboto;
+}

@@ -9,10 +9,31 @@ addFavMovies = async (req, res) => {
         return console.log(err)
     }
 
-    const userFavMovies = await db.get_user_fav_movies(id)
-    res.status(200).json(userFavMovies);
+    const favMovies = await db.fav_movies(id)
+    res.status(200).json(favMovies);
+}
+
+getUsersFavMovies = async (req, res) => {
+    const db = req.app.get('db');
+    const { id } = req.session.user;
+
+    const usersFavMovies = await db.get_user_fav_movies(id);
+    res.status(200).json(usersFavMovies);
+}
+
+deleteFromWatchlist = async (req, res) => {
+    const db = req.app.get('db');
+    const { id } = req.params;
+    const { id: user_id } = req.session.user;
+    
+    await db.delete_from_watchlist(id);
+    
+    const usersFavMovies = await db.get_user_fav_movies(user_id);
+    res.status(200).json(usersFavMovies);
 }
 
 module.exports = {
-    addFavMovies
+    addFavMovies,
+    getUsersFavMovies,
+    deleteFromWatchlist
 }

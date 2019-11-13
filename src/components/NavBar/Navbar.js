@@ -28,9 +28,9 @@ class Navbar extends React.Component {
 
     clickLogin = () => {
         this.props.userLogin(this.props.username, this.props.password, this.props.loggedIn)
-            .then(() => {
-                this.closeSidebar();
-            })
+            // .then(() => {
+            //     this.closeSidebar();
+            // })
             .catch(() => {
                 this.setState({ error: true });
             })

@@ -19,6 +19,7 @@
   color: #01D277;
   font-size: 2.6em;
   text-shadow: 2px 2px 6px #01D277;
+  font-family: "Roboto Slab", serif;
 }
 
 .nav-action button {
@@ -26,6 +27,12 @@
   background: none;
   color: #01D277;
   font-size: 1.8em;
+  font-family: "Wallpoet", cursive;
+}
+
+.nav-action button:hover {
+  cursor: pointer;
+  color: white;
   text-decoration: underline;
 }
 
@@ -35,7 +42,7 @@
 }
 
 .nav-action {
-  width: 35vw;
+  width: 50vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,10 +59,10 @@
   position: fixed;
   right: 0;
   top: 10vh;
-  width: 0;
-  height: 40vh;
+  height: 35vh;
   -webkit-transition: 1000ms width ease-in-out;
   transition: 1000ms width ease-in-out;
+  width: 0;
 }
 
 .sidemenu-open {
@@ -63,32 +70,17 @@
   position: fixed;
   right: 0;
   top: 10vh;
-  width: 20vw;
-  height: 40vh;
+  height: 35vh;
   -webkit-transition: 1000ms width ease-in-out;
   transition: 1000ms width ease-in-out;
+  width: 20vw;
 }
 
 .sidemenu-list {
   list-style: none;
-  width: 13vw;
-  height: 30vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.sidemenu-logout {
+.sidemenu-logout, .sidemenu-list {
   width: 13vw;
   height: 30vh;
   display: -webkit-box;
@@ -112,6 +104,7 @@
   color: #01D277;
   font-size: 1em;
   font-weight: 600;
+  font-family: "Roboto Slab", serif;
 }
 
 .sidemenu-action {
@@ -123,6 +116,18 @@
   border: none;
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
+  font-family: "Wallpoet", cursive;
+}
+
+.sidemenu-action:hover {
+  cursor: pointer;
+  color: white;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-weight: 700;
 }
 
 .welcome {
@@ -135,9 +140,10 @@
   color: #01D277;
   font-size: 1.2em;
   font-weight: 700;
+  font-family: "Wallpoet", cursive;
 }
 
-.sidemenu-logout button {
+.sidemenu-logout button, .sidemenu-list button {
   height: 4vh;
   width: 12vw;
   font-size: 1em;
@@ -146,25 +152,18 @@
   border: none;
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
+  font-family: "Wallpoet", cursive;
 }
 
-@media (max-width: 1000px) {
-  .nav-title {
-    display: none;
-  }
-  .nav-action {
-    width: 100vw;
-  }
-  .login-input {
-    width: 10vw;
-  }
-}
-
-@media (max-width: 600px) {
-  .sidemenu-list {
-    position: relative;
-    right: 4vw;
-  }
+.sidemenu-logout button:hover, .sidemenu-list button:hover {
+  cursor: pointer;
+  color: white;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-weight: 700;
 }
 
 @media (max-width: 400px) {
@@ -181,7 +180,7 @@
   .welcome {
     font-size: .8em;
   }
-  .sidemenu-logout button {
+  .sidemenu-logout button, .sidemenu-list button {
     font-size: .8em;
     width: 20vw;
     -webkit-box-shadow: none;
@@ -192,6 +191,12 @@
   }
   .register-text {
     font-size: 1em;
+  }
+  .nav-title {
+    display: none;
+  }
+  .nav-action {
+    width: 100vw;
   }
 }
 /*# sourceMappingURL=Navbar.css.map */

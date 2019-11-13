@@ -36,7 +36,11 @@
     background: $a;
     color: $b;
     border: none;
-    box-shadow: 4px 4px 10px $a
+    box-shadow: 4px 4px 10px $a;
+    font-family: $wallpoet;
+    &:hover {
+        @include hover-buttons();
+    }
 }
 
 .register-field {
@@ -45,6 +49,7 @@
     color: $b;
     font-size: 1em;
     font-weight: 600;
+    font-family: $roboto;
 }
 
 @media (max-width: 400px) {

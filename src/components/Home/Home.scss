@@ -1,5 +1,20 @@
 @import "../Navbar/Navbar";
 
+$ubuntu: 'Ubuntu', sans-serif;
+
+@mixin nowshowing() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding-top: 10vh;
+    color: white;
+    text-decoration: underline;
+    text-shadow: 4px 4px 6px $b;
+    font-family: $roboto;
+}
+
 .home-background {
     background: $c
 }
@@ -28,7 +43,8 @@
     border: $b 3px solid;
     margin-bottom: 5vh;
     background: $a;
-    box-shadow: 8px 8px 16px $b
+    box-shadow: 12px 12px 1px $b;
+    border-radius: 20px;
 }
 
 .info {
@@ -36,6 +52,7 @@
     flex-direction: column;
     width: 45vw;
     color: white;
+    font-family: $ubuntu;
 }
 
 .add-watchlist {
@@ -51,19 +68,14 @@
     background: $c;
     color: $b;
     border: none;
-    box-shadow: 4px 4px 10px $c
+    box-shadow: 4px 4px 10px $c;
+    &:hover {
+        @include hover-buttons();
+    }
 }
 
 .showing {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    padding-top: 10vh;
-    color: white;
-    text-decoration: underline;
-    text-shadow: 4px 4px 6px $b;
+    @include nowshowing();
 }
 
 .summary {

@@ -1,0 +1,15 @@
+@import "../Navbar/Navbar";
+
+.delete-from-watchlist {
+    width: 14vw;
+    height: 3vh;
+    font-size: 1em;
+    background: $c;
+    color: $b;
+    border: none;
+    box-shadow: 4px 4px 10px $c;
+    &:hover {
+        @include hover-buttons();
+        color: red;
+    }
+}

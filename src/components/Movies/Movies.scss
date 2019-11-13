@@ -22,7 +22,8 @@
     width: 40vw;
     font-size: 2em;
     font-weight: 700;
-    color: $b
+    color: $b;
+    font-family: $roboto;
 }
 
 .default-text {
@@ -30,6 +31,7 @@
     font-size: 2em;
     color: white;
     text-shadow: 4px 4px 6px $b;
+    font-family: $roboto;
 }
 
 .search-actions {
@@ -45,8 +47,12 @@
     background: none;
     color: $b;
     font-size: 1.2em;
-    text-decoration: underline;
     font-weight: 650;
+    font-family: $wallpoet;
+    &:hover {
+        @include hover-buttons();
+        text-decoration: underline;
+    }
 }
 
 @media (max-width: 400px) {

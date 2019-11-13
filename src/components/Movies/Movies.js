@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MappedMovies from './MappedMovies/MappedMovies';
+import { connect } from 'react-redux';
 
 
 class Movies extends Component {
@@ -25,6 +26,14 @@ class Movies extends Component {
         })
     }
 
+    handleNowShowing = () => {
+        this.props.history.push('/movies/nowshowing');
+    }
+    
+    handleNotLoggedIn = () => {
+        return alert('Please Log In')
+    }
+
     render() {
         const mappedSearch = this.state.search.map((movie, i) => {
             return (
@@ -42,6 +51,7 @@ class Movies extends Component {
                         <Link to='/movies/toprated' ><button>Top Rated</button></Link>
                         <Link to='/movies/popular' ><button>Most Popular</button></Link>
                         <Link to='/movies/comingsoon' ><button>Coming Soon</button></Link>
+                        {this.props.loggedIn === true ? <button onClick={this.handleNowShowing}>Showtimes</button> : <button onClick={this.handleNotLoggedIn}>Showtimes</button>}
                     </ul>
                     <div className='search-bar'>
                         <input className='search' placeholder='Search...' onChange={this.searchMovie} />
@@ -53,4 +63,11 @@ class Movies extends Component {
     }
 }
 
-export default Movies;
+
+const mapStateToProps = reduxState => {
+    return {
+        loggedIn: reduxState.authReducer.loggedIn
+    }
+}
+
+export default connect(mapStateToProps)(Movies);

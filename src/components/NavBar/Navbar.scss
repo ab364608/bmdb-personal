@@ -1,6 +1,38 @@
 $a: #081C23;
 $b: #01D277;
 $c: #333333;
+$pointer: pointer;
+$roboto: 'Roboto Slab', serif;
+$wallpoet: 'Wallpoet', cursive;
+
+@mixin sidemenu($sidemenu_width) {
+  background: $a;
+  position: fixed;
+  right: 0;
+  top: 10vh;
+  height: 35vh;
+  transition: 1000ms width ease-in-out;
+  width: $sidemenu_width;
+}
+
+@mixin sidepiece() {
+  width: 13vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin hover-buttons() {
+  cursor: $pointer;
+  color: white;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  box-shadow: none;
+  font-weight: 700;
+}
 
 .navBar {
     display: flex;
@@ -16,7 +48,8 @@ $c: #333333;
     margin-left: 5vw;
     color: $b;
     font-size: 2.6em;
-    text-shadow: 2px 2px 6px $b
+    text-shadow: 2px 2px 6px $b;
+    font-family: $roboto;
   }
 
   .nav-action button {
@@ -24,7 +57,12 @@ $c: #333333;
     background: none;
     color: $b;
     font-size: 1.8em;
-    text-decoration: underline;
+    font-family: $wallpoet;
+    &:hover {
+      cursor: $pointer;
+      color: white;
+      text-decoration: underline;
+    }
   }
   
   .sidebar-button {
@@ -33,49 +71,28 @@ $c: #333333;
   }
   
   .nav-action {
-    width: 35vw;
+    width: 50vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
   
   .sidemenu {
-    background: $a;
-    position: fixed;
-    right: 0;
-    top: 10vh;
-    width: 0;
-    height: 40vh;
-    transition: 1000ms width ease-in-out;
+    @include sidemenu(0);
   }
   
   .sidemenu-open {
-    background: $a;
-    position: fixed;
-    right: 0;
-    top: 10vh;
-    width: 20vw;
-    height: 40vh;
-    transition: 1000ms width ease-in-out;
+    @include sidemenu(20vw);
+    
   }
   
   .sidemenu-list {
+    @extend .sidemenu-logout;
     list-style: none;
-    width: 13vw;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
   }
 
   .sidemenu-logout {
-    width: 13vw;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    @include sidepiece();
   }
 
   .login-input {
@@ -84,6 +101,7 @@ $c: #333333;
     color: $b;
     font-size: 1em;
     font-weight: 600;
+    font-family: $roboto;
   }
 
   .sidemenu-action {
@@ -93,7 +111,11 @@ $c: #333333;
     background: $c;
     color: $b;
     border: none;
-    box-shadow: 4px 4px 10px $c
+    box-shadow: 4px 4px 10px $c;
+    font-family: $wallpoet;
+    &:hover {
+      @include hover-buttons();
+    }
   }
 
   .welcome {
@@ -106,6 +128,7 @@ $c: #333333;
     color: $b;
     font-size: 1.2em;
     font-weight: 700;
+    font-family: $wallpoet;
   }
 
   .sidemenu-logout button {
@@ -115,25 +138,10 @@ $c: #333333;
     background: $c;
     color: $b;
     border: none;
-    box-shadow: 4px 4px 10px $c
-  }
-
-  @media (max-width: 1000px) {
-    .nav-title {
-      display: none;
-    }
-    .nav-action {
-      width: 100vw;
-    }
-    .login-input {
-      width: 10vw;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .sidemenu-list {
-      position: relative;
-      right: 4vw;
+    box-shadow: 4px 4px 10px $c;
+    font-family: $wallpoet;
+    &:hover {
+      @include hover-buttons();
     }
   }
 
@@ -161,5 +169,11 @@ $c: #333333;
     }
     .register-text {
       font-size: 1em
+    }
+    .nav-title {
+      display: none;
+    }
+    .nav-action {
+      width: 100vw;
     }
   }

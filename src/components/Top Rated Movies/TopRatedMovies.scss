@@ -6,4 +6,14 @@
     color: $b;
     font-size: 1.2em;
     text-decoration: underline;
+    font-family: $wallpoet;
+    &:hover {
+        @include hover-buttons();
+    }
+}
+
+@media (max-width: 400px) {
+    .goback {
+        font-size: .8em
+    }
 }

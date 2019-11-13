@@ -34,8 +34,10 @@ app.use(
 
 app.use(express.json());
 
-//Movies
+//Watchlist
 app.post('/api/movies', MC.addFavMovies);
+app.get('/api/movies/watchlist', MC.getUsersFavMovies);
+app.delete('/api/movies/watchlist/:id', MC.deleteFromWatchlist)
 
 //Profile
 app.put('/api/profile/:id', PC.editUserProfile);

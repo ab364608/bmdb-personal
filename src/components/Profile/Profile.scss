@@ -27,6 +27,10 @@
     color: red;
     text-decoration: underline;
     font-size: 1em;
+    &:hover {
+        cursor: $pointer;
+        font-weight: 700;
+    }
 }
 
 .ifClicked {
@@ -43,7 +47,12 @@
     background: $a;
     color: $b;
     border: none;
-    box-shadow: 4px 4px 10px $a
+    box-shadow: 4px 4px 10px $a;
+    font-family: $wallpoet;
+    &:hover {
+        @include hover-buttons();
+        color: red;
+    }
 }
 
 .changeDB h4 {
@@ -51,13 +60,18 @@
 }
 
 .execute {
-    width: 6vw;
+    width: 10vw;
     height: 4vh;
     font-size: 1em;
     background: $a;
     color: $b;
     border: none;
     box-shadow: 4px 4px 10px $a;
+    font-family: $wallpoet;
+    &:hover {
+        @include hover-buttons();
+        color: red;
+    }
 }
 
 .editInputs {
@@ -66,6 +80,7 @@
     color: $b;
     font-size: .8em;
     font-weight: 600;
+    font-family: $roboto;
 }
 
 @media (max-width: 400px) {

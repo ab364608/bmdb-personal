@@ -91,6 +91,7 @@ class Profile extends Component {
                         </div> : null}
                     </ul>
                 </div>
+                {this.props.loggedIn === false ? window.location.href='/' : null}
             </div>
         )
     }
@@ -101,7 +102,7 @@ const mapStateToProps = reduxState => {
         username: reduxState.authReducer.username,
         password: reduxState.authReducer.password,
         name: reduxState.authReducer.name,
-        user: reduxState.authReducer.user
+        user: reduxState.authReducer.user,loggedIn: reduxState.authReducer.loggedIn
     }
 }
 
