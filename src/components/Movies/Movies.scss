@@ -49,6 +49,7 @@
     font-size: 1.2em;
     font-weight: 650;
     font-family: $wallpoet;
+    outline: none;
     &:hover {
         @include hover-buttons();
         text-decoration: underline;

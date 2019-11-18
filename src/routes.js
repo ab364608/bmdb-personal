@@ -14,6 +14,7 @@ import NowShowing from './components/Now Showing/NowShowing';
 import TopRatedTV from './components/Top Rated TV/TopRatedTV';
 import MostPopularTV from './components/Most Popular TV/MostPopularTV';
 import TVAiringToday from './components/TV Airing Today/TVAiringToday';
+import People from './components/People/People';
 
 export default (
     <>
@@ -32,6 +33,7 @@ export default (
             <Route component={TopRatedTV} path='/tv/toprated' />
             <Route component={MostPopularTV} path='/tv/popular' />
             <Route component={TVAiringToday} path='/tv/airing' />
+            <Route component={People} path='/people' />
         </Switch>
     </>
 )

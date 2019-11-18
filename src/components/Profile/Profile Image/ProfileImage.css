@@ -203,11 +203,8 @@
   }
 }
 
-.profile-container {
-  background: #333333;
-  padding-top: 10vh;
-  width: 100vw;
-  height: 90vh;
+.firebase-container {
+  width: 35vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -218,87 +215,46 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.box-container {
-  width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.edit-container {
-  background: #081C23;
-  height: 50vh;
-  width: 35vw;
-  border: 2px #01D277 solid;
-  border-radius: 20px;
-}
-
-.image-container {
-  background: #081C23;
-  height: 50vh;
-  width: 35vw;
-  border: 2px #01D277 solid;
-  border-radius: 20px;
-}
-
-.user-profile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100vw;
-  padding-bottom: 6vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-.profile-title {
-  color: white;
-  font-family: "Roboto Slab", serif;
-  padding-left: 38vw;
-}
-
-.changeDB h4 {
-  font-family: "Roboto Slab", serif;
-}
-
-.user-profile button {
-  border: none;
-  background: none;
-  color: red;
-  text-decoration: underline;
-  font-size: 1em;
-}
-
-.user-profile button:hover {
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.ifClicked {
-  height: 3vh;
-  width: 20vw;
-  padding-top: 2vh;
+.upload-container {
+  height: 30vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
 
-.changeDB .editDB {
+.profile-img {
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  color: white;
+}
+
+.img-input {
+  color: white;
+}
+
+.profile-img-text {
+  color: white;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.4em;
+}
+
+.saveChanges {
   height: 4vh;
   width: 16vw;
   font-size: 1em;
@@ -311,7 +267,7 @@
   outline: none;
 }
 
-.changeDB .editDB:hover {
+.saveChanges:hover {
   cursor: pointer;
   color: white;
   border: none;
@@ -321,100 +277,26 @@
           box-shadow: none;
   font-weight: 700;
   color: red;
-}
-
-.changeDB h4 {
-  color: white;
-}
-
-.execute {
-  width: 10vw;
-  height: 4vh;
-  font-size: 1em;
-  background: #081C23;
-  color: #01D277;
-  border: none;
-  -webkit-box-shadow: 4px 4px 10px #081C23;
-          box-shadow: 4px 4px 10px #081C23;
-  font-family: "Wallpoet", cursive;
-}
-
-.execute:hover {
-  cursor: pointer;
-  color: white;
-  border: none;
-  background: none;
-  text-decoration: underline;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  font-weight: 700;
-  color: red;
-}
-
-.editInputs {
-  width: 20vw;
-  height: 3vh;
-  color: #01D277;
-  font-size: .8em;
-  font-weight: 600;
-  font-family: "Roboto Slab", serif;
 }
 
 @media (max-width: 400px) {
-  .user-profile {
-    width: 70vw;
-    padding-bottom: 2vh;
+  .firebase-container {
+    width: 62vw;
   }
-  .profile-title {
-    font-size: .9em;
-    padding-left: 15vw;
-  }
-  .user-profile button {
-    font-size: .7em;
-  }
-  .changeDB h4 {
+  .profile-img-text {
     font-size: .8em;
+    padding-top: 1vh;
   }
-  .changeDB .editDB {
-    font-size: .7em;
-    width: 25vw;
+  .profile-img {
+    height: 90px;
+    width: 90px;
   }
-  .execute {
-    font-size: .7em;
-    width: 20vw;
+  .upload-container {
+    height: 15vh;
   }
-  .editInputs {
+  .saveChanges {
+    font-size: .8em;
     width: 30vw;
-    font-size: .7em;
-    height: 2vh;
-  }
-  .ifClicked {
-    padding-left: 20vw;
-  }
-  .box-container {
-    height: 80vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .image-container {
-    height: 25vh;
-    width: 60vw;
-    margin-bottom: 5vw;
-  }
-  .edit-container {
-    height: 45vh;
-    width: 80vw;
   }
 }
-/*# sourceMappingURL=Profile.css.map */
+/*# sourceMappingURL=ProfileImage.css.map */

@@ -3,9 +3,9 @@
 
 .nowshowing {
     @include nowshowing();
-    padding-top: 5vh;
+    padding-top: 8vh;
     justify-content: space-evenly;
-    height: 30vh;
+    height: 35vh;
 }
 
 .nowshowing-goback {
@@ -25,4 +25,36 @@
     font-size: .8em;
     font-weight: 600;
     font-family: $roboto;
+}
+
+.redirect-text {
+    font-size: .8em;
+    text-shadow: none;
+}
+
+.fandago {
+    width: 10vw;
+    height: 3vh;
+    font-size: 1em;
+    background: $a;
+    color: $b;
+    border: none;
+    box-shadow: 4px 4px 10px $a;
+    font-family: $wallpoet;
+    &:hover {
+        @include hover-buttons();
+    }
+}
+
+@media (max-width: 400px) {
+    .zipcode {
+        width: 25vw;
+    }
+    .nowshowing-goback h1 {
+        font-size: 1.2em;
+    }
+    .fandago {
+        font-size: .7em;
+        width: 15vw;
+    }
 }

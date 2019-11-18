@@ -8,8 +8,17 @@
     color: $b;
     border: none;
     box-shadow: 4px 4px 10px $c;
+    font-family: $wallpoet;
+    outline: none;
     &:hover {
         @include hover-buttons();
         color: red;
+    }
+}
+
+@media (max-width: 400px) {
+    .delete-from-watchlist {
+        font-size: .7em;
+        width: 20vw;
     }
 }

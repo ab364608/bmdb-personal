@@ -10,15 +10,45 @@
     align-items: center
 }
 
+.box-container {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.edit-container {
+    background: $a;
+    height: 50vh;
+    width: 35vw;
+    border: 2px $b solid;
+    border-radius: 20px;
+}
+
+.image-container {
+    background: $a;
+    height: 50vh;
+    width: 35vw;
+    border: 2px $b solid;
+    border-radius: 20px;
+}
+
 .user-profile {
     display: flex;
-    width: 40vw;
+    width: 100vw;
+    padding-bottom: 6vh;
+    align-items: center;
     justify-content: center;
     justify-content: space-between;
 }
 
 .profile-title {
-    color: white
+    color: white;
+    font-family: $roboto;
+    padding-left: 38vw;
+}
+
+.changeDB h4 {
+    font-family: $roboto
 }
 
 .user-profile button {
@@ -34,9 +64,10 @@
 }
 
 .ifClicked {
-    height: 15vh;
+    height: 3vh;
+    width: 20vw;
+    padding-top: 2vh;
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
 }
 
@@ -49,6 +80,7 @@
     border: none;
     box-shadow: 4px 4px 10px $a;
     font-family: $wallpoet;
+    outline: none;
     &:hover {
         @include hover-buttons();
         color: red;
@@ -84,5 +116,50 @@
 }
 
 @media (max-width: 400px) {
-    
+    .user-profile {
+        width: 70vw;
+        padding-bottom: 2vh;
+    }
+    .profile-title {
+        font-size: .9em;
+        padding-left: 15vw;
+    }
+    .user-profile button {
+        font-size: .7em;
+    }
+    .changeDB h4 {
+        font-size: .8em;
+    }
+    .changeDB .editDB {
+        font-size: .7em;
+        width: 25vw;
+    }
+    .execute {
+        font-size: .7em;
+        width: 20vw;
+    }
+    .editInputs {
+        width: 30vw;
+        font-size: .7em;
+        height: 2vh;
+    }
+    .ifClicked {
+        padding-left: 20vw;
+    }
+    .box-container {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .image-container {
+        height: 25vh;
+        width: 60vw;
+        margin-bottom: 5vw;
+    }
+    .edit-container {
+        height: 45vh;
+        width: 80vw;
+    }
 }

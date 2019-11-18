@@ -77,6 +77,11 @@ class Navbar extends React.Component {
         this.closeSidebar();
     }
 
+    handlePeople = () => {
+        this.props.history.push('/people');
+        this.closeSidebar();
+    }
+
     render() {
         let sidebarClassnames = 'sidemenu';
         if (this.state.open) {
@@ -91,6 +96,7 @@ class Navbar extends React.Component {
                         <Link to='/'><button>Home</button></Link>
                         <button onClick={this.handleMovies}>Movies</button>
                         <button onClick={this.handleTVSeries}>TV Series</button>
+                        <button onClick={this.handlePeople}>Actors</button>
                         <img className='sidebar-button'
                             src='https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg'
                             alt='sidebar'

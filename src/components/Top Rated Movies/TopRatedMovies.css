@@ -28,6 +28,7 @@
   color: #01D277;
   font-size: 1.8em;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .nav-action button:hover {
@@ -42,7 +43,7 @@
 }
 
 .nav-action {
-  width: 50vw;
+  width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,6 +105,7 @@
   color: #01D277;
   font-size: 1em;
   font-weight: 600;
+  font-family: "Roboto Slab", serif;
 }
 
 .sidemenu-action {
@@ -116,6 +118,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-action:hover {
@@ -133,6 +136,7 @@
   font-size: 1em;
   color: white;
   font-size: 1.3em;
+  font-family: "Roboto Slab", serif;
 }
 
 .register-text {
@@ -152,6 +156,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-logout button:hover, .sidemenu-list button:hover {
@@ -196,6 +201,8 @@
   }
   .nav-action {
     width: 100vw;
+    position: relative;
+    right: 6vw;
   }
 }
 
@@ -206,6 +213,7 @@
   font-size: 1.2em;
   text-decoration: underline;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .goback:hover {

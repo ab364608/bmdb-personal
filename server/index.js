@@ -37,11 +37,12 @@ app.use(express.json());
 //Watchlist
 app.post('/api/movies', MC.addFavMovies);
 app.get('/api/movies/watchlist', MC.getUsersFavMovies);
-app.delete('/api/movies/watchlist/:id', MC.deleteFromWatchlist)
+app.delete('/api/movies/watchlist/:id', MC.deleteFromWatchlist);
 
 //Profile
 app.put('/api/profile/:id', PC.editUserProfile);
-app.delete('/api/profile/:id', PC.deleteUserProfile)
+app.put('/api/profile/img/:id', PC.updateProfileImg);
+app.get('/api/profile/img', PC.getProfileImg);
 
 //Authentication
 app.use(AM.checkUserExists);
@@ -50,5 +51,5 @@ app.post('/auth/login', AC.login);
 app.get('/auth/logout', AC.logout);
 
 app.listen(SERVER_PORT, () => {
-    console.log(`Running on Port: ${SERVER_PORT}`)
+    console.log(`Running on Port: ${SERVER_PORT}`);
 })

@@ -24,14 +24,14 @@ class Movies extends Component {
                 this.setState({ search: movies.results })
             }
         })
-    }
+    } 
 
     handleNowShowing = () => {
         this.props.history.push('/movies/nowshowing');
     }
     
     handleNotLoggedIn = () => {
-        return alert('Please Log In')
+        return alert('Please Log In to Use This Feature')
     }
 
     render() {
@@ -51,6 +51,7 @@ class Movies extends Component {
                         <Link to='/movies/toprated' ><button>Top Rated</button></Link>
                         <Link to='/movies/popular' ><button>Most Popular</button></Link>
                         <Link to='/movies/comingsoon' ><button>Coming Soon</button></Link>
+                        {/* <button onClick={this.handleNowShowing}>Showtimes</button> */}
                         {this.props.loggedIn === true ? <button onClick={this.handleNowShowing}>Showtimes</button> : <button onClick={this.handleNotLoggedIn}>Showtimes</button>}
                     </ul>
                     <div className='search-bar'>

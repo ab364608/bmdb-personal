@@ -28,6 +28,7 @@
   color: #01D277;
   font-size: 1.8em;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .nav-action button:hover {
@@ -42,7 +43,7 @@
 }
 
 .nav-action {
-  width: 50vw;
+  width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,6 +105,7 @@
   color: #01D277;
   font-size: 1em;
   font-weight: 600;
+  font-family: "Roboto Slab", serif;
 }
 
 .sidemenu-action {
@@ -116,6 +118,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-action:hover {
@@ -133,6 +136,7 @@
   font-size: 1em;
   color: white;
   font-size: 1.3em;
+  font-family: "Roboto Slab", serif;
 }
 
 .register-text {
@@ -152,6 +156,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-logout button:hover, .sidemenu-list button:hover {
@@ -196,6 +201,8 @@
   }
   .nav-action {
     width: 100vw;
+    position: relative;
+    right: 6vw;
   }
 }
 
@@ -274,7 +281,7 @@
 }
 
 .watchlist {
-  width: 14vw;
+  width: 16vw;
   height: 3vh;
   font-size: 1em;
   background: #333333;
@@ -282,6 +289,8 @@
   border: none;
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
+  font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .watchlist:hover {
@@ -320,39 +329,8 @@
 .summary {
   overflow: scroll;
   width: 45vw;
-  height: 20vh;
-}
-
-@media (max-width: 1000px) {
-  .card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    /* flex-direction: column; */
-    /* margin-top: 4vh; */
-  }
-  /* .now-showing {
-        font-size: .7em;
-        margin-left: 15vw;
-    } */
-}
-
-@media (max-width: 800px) {
-  .now-showing {
-    font-size: .8em;
-    margin-left: 10vw;
-  }
-  .poster {
-    height: 40vh;
-    width: 25vw;
-  }
-}
-
-@media (max-width: 600px) {
-  .poster {
-    height: 30vh;
-    width: 30vw;
-  }
+  height: 15vh;
+  line-height: 1.618;
 }
 
 @media (max-width: 400px) {
@@ -388,6 +366,9 @@
   }
   .critic-rating {
     font-size: .8em;
+  }
+  .release-date {
+    display: none;
   }
   .poster {
     height: 30vh;

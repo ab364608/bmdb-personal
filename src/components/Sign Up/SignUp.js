@@ -44,6 +44,7 @@ class SignUp extends Component {
                     </div>
                 </form>
             </div>
+            {/* {this.props.loggedIn === true ? window.location.href='/' && alert('Do Not Log In While on the Sign Up Page') : null} */}
             </div>
         )
     }
@@ -53,7 +54,8 @@ const mapStateToProps = reduxState => {
     return {
         username: reduxState.authReducer.username,
         password: reduxState.authReducer.password,
-        name: reduxState.authReducer.name
+        name: reduxState.authReducer.name,
+        loggedIn: reduxState.authReducer.loggedIn
     }
 }
 

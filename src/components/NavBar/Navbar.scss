@@ -44,42 +44,43 @@ $wallpoet: 'Wallpoet', cursive;
     position: fixed;
   }
   
-  .nav-title {
-    margin-left: 5vw;
-    color: $b;
-    font-size: 2.6em;
-    text-shadow: 2px 2px 6px $b;
-    font-family: $roboto;
-  }
+.nav-title {
+  margin-left: 5vw;
+  color: $b;
+  font-size: 2.6em;
+  text-shadow: 2px 2px 6px $b;
+  font-family: $roboto;
+}
 
-  .nav-action button {
+.nav-action button {
     border: none;
     background: none;
     color: $b;
     font-size: 1.8em;
     font-family: $wallpoet;
+    outline: none;
     &:hover {
       cursor: $pointer;
       color: white;
       text-decoration: underline;
     }
-  }
+}
   
-  .sidebar-button {
-    height: 7vh;
-    width: 5vw;
-  }
+.sidebar-button {
+  height: 7vh;
+  width: 5vw;
+}
   
-  .nav-action {
-    width: 50vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  
-  .sidemenu {
+.nav-action {
+  width: 60vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sidemenu {
     @include sidemenu(0);
-  }
+}
   
   .sidemenu-open {
     @include sidemenu(20vw);
@@ -113,6 +114,7 @@ $wallpoet: 'Wallpoet', cursive;
     border: none;
     box-shadow: 4px 4px 10px $c;
     font-family: $wallpoet;
+    outline: none;
     &:hover {
       @include hover-buttons();
     }
@@ -122,6 +124,7 @@ $wallpoet: 'Wallpoet', cursive;
     font-size: 1em;
     color: white;
     font-size: 1.3em;
+    font-family: $roboto;
   }
 
   .register-text {
@@ -140,6 +143,7 @@ $wallpoet: 'Wallpoet', cursive;
     border: none;
     box-shadow: 4px 4px 10px $c;
     font-family: $wallpoet;
+    outline: none;
     &:hover {
       @include hover-buttons();
     }
@@ -175,5 +179,7 @@ $wallpoet: 'Wallpoet', cursive;
     }
     .nav-action {
       width: 100vw;
+      position: relative;
+      right: 6vw;
     }
   }

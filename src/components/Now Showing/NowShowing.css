@@ -134,6 +134,7 @@
   font-size: 1em;
   color: white;
   font-size: 1.3em;
+  font-family: "Roboto Slab", serif;
 }
 
 .register-text {
@@ -275,7 +276,7 @@
 }
 
 .watchlist {
-  width: 14vw;
+  width: 16vw;
   height: 3vh;
   font-size: 1em;
   background: #333333;
@@ -283,6 +284,7 @@
   border: none;
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
+  font-family: "Wallpoet", cursive;
 }
 
 .watchlist:hover {
@@ -322,6 +324,7 @@
   overflow: scroll;
   width: 45vw;
   height: 20vh;
+  line-height: 1.618;
 }
 
 @media (max-width: 1000px) {
@@ -539,6 +542,7 @@
   font-size: 1em;
   color: white;
   font-size: 1.3em;
+  font-family: "Roboto Slab", serif;
 }
 
 .register-text {
@@ -625,11 +629,11 @@
   text-decoration: underline;
   text-shadow: 4px 4px 6px #01D277;
   font-family: "Roboto Slab", serif;
-  padding-top: 5vh;
+  padding-top: 8vh;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 30vh;
+  height: 35vh;
 }
 
 .nowshowing-goback {
@@ -656,5 +660,46 @@
   font-size: .8em;
   font-weight: 600;
   font-family: "Roboto Slab", serif;
+}
+
+.redirect-text {
+  font-size: .8em;
+  text-shadow: none;
+}
+
+.fandago {
+  width: 10vw;
+  height: 3vh;
+  font-size: 1em;
+  background: #081C23;
+  color: #01D277;
+  border: none;
+  -webkit-box-shadow: 4px 4px 10px #081C23;
+          box-shadow: 4px 4px 10px #081C23;
+  font-family: "Wallpoet", cursive;
+}
+
+.fandago:hover {
+  cursor: pointer;
+  color: white;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-weight: 700;
+}
+
+@media (max-width: 400px) {
+  .zipcode {
+    width: 25vw;
+  }
+  .nowshowing-goback h1 {
+    font-size: 1.2em;
+  }
+  .fandago {
+    font-size: .7em;
+    width: 15vw;
+  }
 }
 /*# sourceMappingURL=NowShowing.css.map */

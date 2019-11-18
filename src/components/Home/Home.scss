@@ -23,8 +23,6 @@ $ubuntu: 'Ubuntu', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    // margin-left: 5vw;
-    // justify-content: center;
 }
 
 .card-list {
@@ -62,13 +60,15 @@ $ubuntu: 'Ubuntu', sans-serif;
 }
 
 .watchlist {
-    width: 14vw;
+    width: 16vw;
     height: 3vh;
     font-size: 1em;
     background: $c;
     color: $b;
     border: none;
     box-shadow: 4px 4px 10px $c;
+    font-family: $wallpoet;
+    outline: none;
     &:hover {
         @include hover-buttons();
     }
@@ -81,37 +81,8 @@ $ubuntu: 'Ubuntu', sans-serif;
 .summary {
     overflow: scroll;
     width: 45vw;
-    height: 20vh;
-}
-
-@media (max-width: 1000px) {
-    .card {
-        display: flex;
-        /* flex-direction: column; */
-        /* margin-top: 4vh; */
-    }
-    /* .now-showing {
-        font-size: .7em;
-        margin-left: 15vw;
-    } */
-}
-
-@media (max-width: 800px) {
-    .now-showing {
-        font-size: .8em;
-        margin-left: 10vw;
-    }
-    .poster {
-        height: 40vh;
-        width: 25vw;
-    }
-}
-
-@media(max-width: 600px) {
-    .poster {
-        height: 30vh;
-        width: 30vw;
-    }
+    height: 15vh;
+    line-height: 1.618;
 }
 
 @media (max-width: 400px) {
@@ -138,6 +109,10 @@ $ubuntu: 'Ubuntu', sans-serif;
     }
     .critic-rating {
         font-size: .8em;
+    }
+    .release-date {
+        // font-size: .8em;
+        display: none;
     }
     .poster {
         height: 30vh;
