@@ -179,7 +179,7 @@
     font-size: .8em;
   }
   .nav-action button {
-    font-size: 1.1em;
+    font-size: .9em;
   }
   .welcome {
     font-size: .8em;
@@ -200,7 +200,7 @@
     display: none;
   }
   .nav-action {
-    width: 100vw;
+    width: 80vw;
     position: relative;
     right: 6vw;
   }
