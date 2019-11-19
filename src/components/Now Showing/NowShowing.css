@@ -10,7 +10,7 @@
           align-items: center;
   height: 10vh;
   width: 100vw;
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
 }
 
@@ -28,6 +28,7 @@
   color: #01D277;
   font-size: 1.8em;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .nav-action button:hover {
@@ -42,7 +43,7 @@
 }
 
 .nav-action {
-  width: 50vw;
+  width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,7 +56,7 @@
 }
 
 .sidemenu {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -66,7 +67,7 @@
 }
 
 .sidemenu-open {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -117,6 +118,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-action:hover {
@@ -154,6 +156,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-logout button:hover, .sidemenu-list button:hover {
@@ -198,11 +201,14 @@
   }
   .nav-action {
     width: 100vw;
+    position: relative;
+    right: 6vw;
   }
 }
 
 .home-background {
-  background: #333333;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#081C23), to(#333333));
+  background-image: linear-gradient(#081C23, #333333);
 }
 
 .contain {
@@ -285,6 +291,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .watchlist:hover {
@@ -323,40 +330,8 @@
 .summary {
   overflow: scroll;
   width: 45vw;
-  height: 20vh;
+  height: 15vh;
   line-height: 1.618;
-}
-
-@media (max-width: 1000px) {
-  .card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    /* flex-direction: column; */
-    /* margin-top: 4vh; */
-  }
-  /* .now-showing {
-        font-size: .7em;
-        margin-left: 15vw;
-    } */
-}
-
-@media (max-width: 800px) {
-  .now-showing {
-    font-size: .8em;
-    margin-left: 10vw;
-  }
-  .poster {
-    height: 40vh;
-    width: 25vw;
-  }
-}
-
-@media (max-width: 600px) {
-  .poster {
-    height: 30vh;
-    width: 30vw;
-  }
 }
 
 @media (max-width: 400px) {
@@ -393,6 +368,9 @@
   .critic-rating {
     font-size: .8em;
   }
+  .release-date {
+    display: none;
+  }
   .poster {
     height: 30vh;
     width: 40vw;
@@ -418,7 +396,7 @@
           align-items: center;
   height: 10vh;
   width: 100vw;
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
 }
 
@@ -436,6 +414,7 @@
   color: #01D277;
   font-size: 1.8em;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .nav-action button:hover {
@@ -450,7 +429,7 @@
 }
 
 .nav-action {
-  width: 50vw;
+  width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,7 +442,7 @@
 }
 
 .sidemenu {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -474,7 +453,7 @@
 }
 
 .sidemenu-open {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -525,6 +504,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-action:hover {
@@ -562,6 +542,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-logout button:hover, .sidemenu-list button:hover {
@@ -606,6 +587,8 @@
   }
   .nav-action {
     width: 100vw;
+    position: relative;
+    right: 6vw;
   }
 }
 

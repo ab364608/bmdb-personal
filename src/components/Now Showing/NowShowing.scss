@@ -1,5 +1,5 @@
-@import '../Home/Home';
-@import '../NavBar/Navbar';
+@import '../Home/Home.scss';
+@import '../NavBar/Navbar.scss';
 
 .nowshowing {
     @include nowshowing();
