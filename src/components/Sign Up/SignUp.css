@@ -10,8 +10,7 @@
           align-items: center;
   height: 10vh;
   width: 100vw;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#3333337e), to(rgba(8, 28, 35, 0.616)));
-  background-image: linear-gradient(#3333337e, rgba(8, 28, 35, 0.616));
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
 }
 
@@ -57,7 +56,7 @@
 }
 
 .sidemenu {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -68,7 +67,7 @@
 }
 
 .sidemenu-open {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -293,7 +292,7 @@
   font-family: "Roboto Slab", serif;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .register-field {
     width: 35vw;
     font-size: .8em;

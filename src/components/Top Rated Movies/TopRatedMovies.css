@@ -10,7 +10,7 @@
           align-items: center;
   height: 10vh;
   width: 100vw;
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .sidemenu {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -67,7 +67,7 @@
 }
 
 .sidemenu-open {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -170,7 +170,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .sidemenu-open {
     width: 30vw;
   }
@@ -227,7 +227,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .goback {
     font-size: .8em;
   }

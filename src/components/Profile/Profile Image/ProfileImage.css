@@ -10,7 +10,7 @@
           align-items: center;
   height: 10vh;
   width: 100vw;
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
 }
 
@@ -28,6 +28,7 @@
   color: #01D277;
   font-size: 1.8em;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .nav-action button:hover {
@@ -55,7 +56,7 @@
 }
 
 .sidemenu {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -66,7 +67,7 @@
 }
 
 .sidemenu-open {
-  background: #081C23;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -117,6 +118,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-action:hover {
@@ -154,6 +156,7 @@
   -webkit-box-shadow: 4px 4px 10px #333333;
           box-shadow: 4px 4px 10px #333333;
   font-family: "Wallpoet", cursive;
+  outline: none;
 }
 
 .sidemenu-logout button:hover, .sidemenu-list button:hover {
@@ -167,7 +170,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .sidemenu-open {
     width: 30vw;
   }
@@ -279,7 +282,7 @@
   color: red;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .firebase-container {
     width: 62vw;
   }
