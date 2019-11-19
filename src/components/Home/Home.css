@@ -207,7 +207,8 @@
 }
 
 .home-background {
-  background: #333333;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#081C23), to(#333333));
+  background-image: linear-gradient(#081C23, #333333);
 }
 
 .contain {

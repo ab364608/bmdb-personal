@@ -14,7 +14,9 @@ const UPDATE_STATE = 'UPDATE_STATE';
 const RESET_INPUTS = 'RESET_INPUTS';
 const USER_LOGIN = 'USER_LOGIN';
 const USER_LOGOUT = 'USER_LOGOUT';
-const EDIT_USER_PROFILE = 'EDIT_USER_PROFILE';
+const EDIT_USER_PASSWORD = 'EDIT_USER_PASSWORD';
+const EDIT_NAME = 'EDIT_NAME';
+const EDIT_USERNAME = 'EDIT_USERNAME';
 
 export const updateState = e => {
     return {
@@ -46,13 +48,29 @@ export const userLogout = () => {
     }
 }
 
-export const editUserProfile = (id, newUsername, newPassword, newName) => {
+export const editUserPassword = (id, newPassword) => {
     return {
-        type: EDIT_USER_PROFILE,
-        payload: axios.put(`/api/profile/${id}`, {
-            username: newUsername,
-            password: newPassword,
+        type: EDIT_USER_PASSWORD,
+        payload: axios.put(`/api/profile/password/${id}`, {
+            password: newPassword
+        })
+    }
+}
+
+export const updateUsersName = (id, newName) => {
+    return {
+        type: EDIT_NAME,
+        payload: axios.put(`/api/profile/name/${id}`, {
             name: newName
+        })
+    }
+}
+
+export const updateUsername = (id, newUsername) => {
+    return {
+        type: EDIT_NAME,
+        payload: axios.put(`/api/username/${id}`, {
+            username: newUsername
         })
     }
 }
@@ -74,10 +92,18 @@ export default function authReducer(state = initialState, action) {
             return { ...state, loading: true };
         case `${USER_LOGOUT}_FULFILLED`:
             return { ...state, loading: false, user: {}, loggedIn: false };
-        case `${EDIT_USER_PROFILE}_PENDING`:
+        case `${EDIT_USER_PASSWORD}_PENDING`:
             return { ...state, loading: true };
-        case `${EDIT_USER_PROFILE}_FULFILLED`:
-            return { ...state, loading: false, user: payload.data[0], username: payload.data[0].username, password: payload.data[0].password, name: payload.data[0].name }
+        case `${EDIT_USER_PASSWORD}_FULFILLED`:
+            return { ...state, loading: false, user: payload.data[0] };
+        case `${EDIT_NAME}_PENDING`:
+            return { ...state, loading: true };
+        case `${EDIT_NAME}_FULFILLED`:
+            return { ...state, loading: false, user: payload.data[0] }
+        case `${EDIT_USERNAME}_PENDING`:
+            return { ...state, loading: true };
+        case `${EDIT_USERNAME}_FULFILLED`:
+            return { ...state, loading: false, user: payload.data[0] }
 
         default:
             return state;

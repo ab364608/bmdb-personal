@@ -1,16 +1,20 @@
 @import "../NavBar/Navbar.scss";
 
+.signup-background {
+    background: $c;
+    padding-top: 20vh;
+}
+
 .below__nav {
     padding-top: 10vh;
 }
 
 .register-form {
-    height: 60vh;
+    height: 70vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20vh;
 }
 
 .register-inputs {

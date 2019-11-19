@@ -33,6 +33,7 @@ app.use(
 );
 
 app.use(express.json());
+app.use( express.static( `${__dirname}/../build` ) );
 
 //Watchlist
 app.post('/api/movies', MC.addFavMovies);
@@ -40,9 +41,11 @@ app.get('/api/movies/watchlist', MC.getUsersFavMovies);
 app.delete('/api/movies/watchlist/:id', MC.deleteFromWatchlist);
 
 //Profile
-app.put('/api/profile/:id', PC.editUserProfile);
+app.put('/api/profile/password/:id', PC.editUserPassword);
 app.put('/api/profile/img/:id', PC.updateProfileImg);
 app.get('/api/profile/img', PC.getProfileImg);
+app.put('/api/profile/name/:id', PC.editUsersName);
+app.put('/api/username/:id', PC.editUsername)
 
 //Authentication
 app.use(AM.checkUserExists);

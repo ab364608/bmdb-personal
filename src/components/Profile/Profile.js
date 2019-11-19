@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Profile.scss';
-import { updateState, editUserProfile, userLogout } from '../../donald ducks/AuthReducer/AuthReducer';
+import { updateState, editUserPassword, userLogout, updateUsersName, updateUsername } from '../../donald ducks/AuthReducer/AuthReducer';
 // import axios from 'axios';
 import ProfileImage from './Profile Image/ProfileImage';
 
@@ -12,8 +12,14 @@ class Profile extends Component {
         this.state = {
             editUsername: false,
             editPassword: false,
-            editName: false
+            editName: false,
+            user_id: 0
         }
+    }
+
+    componentDidMount() {
+        const id = this.props.user.id;
+        this.setState({user_id: id})
     }
 
     handleUsername = () => {
@@ -25,7 +31,7 @@ class Profile extends Component {
     }
 
     updateUsername = () => {
-        this.props.editUserProfile(this.props.user.id, this.props.username, this.props.password, this.props.name);
+        this.props.updateUsername(this.state.user_id, this.props.username);
         this.setState({ editUsername: false })
     }
 
@@ -38,7 +44,7 @@ class Profile extends Component {
     }
 
     updatePassword = () => {
-        this.props.editUserProfile(this.props.user.id, this.props.username, this.props.password, this.props.name);
+        this.props.editUserPassword(this.state.user_id, this.props.password);
         this.setState({ editPassword: false })
     }
 
@@ -51,7 +57,7 @@ class Profile extends Component {
     }
 
     updateName = () => {
-        this.props.editUserProfile(this.props.user.id, this.props.username, this.props.password, this.props.name);
+        this.props.updateUsersName(this.state.user_id, this.props.name);
         this.setState({ editName: false })
     }
 
@@ -59,23 +65,12 @@ class Profile extends Component {
         this.props.updateState({ [e.target.name]: e.target.value })
     }
 
-    // deleteUser = async () => {
-    //     await axios.delete(`/api/profile/${this.props.user.id}`);
-    //     this.props.updateState({
-    //         username: '',
-    //         password: '',
-    //         name: ''
-    //     });
-    //     await this.props.userLogout();
-    //     this.props.history.push('/');
-    // }
 
     render() {
         return (
             <div className='profile-container'>
                 <div className='user-profile'>
                     <h2 className='profile-title'>{this.props.name}'s Profile</h2>
-                    {/* <button onClick={this.deleteUser}>Delete Account</button> */}
                 </div>
                 <div className='box-container'>
                     <div className='edit-container'>
@@ -105,7 +100,9 @@ class Profile extends Component {
                         </ul>
                     </div>
                     <div className='image-container'>
-                        <ProfileImage />
+                        <ProfileImage
+                        user_id={this.state.user_id}
+                        />
                     </div>
                 </div>
                 {this.props.loggedIn === false ? window.location.href = '/' : null}
@@ -124,4 +121,4 @@ const mapStateToProps = reduxState => {
     }
 }
 
-export default connect(mapStateToProps, { updateState, editUserProfile, userLogout })(Profile);
+export default connect(mapStateToProps, { updateState, editUserPassword, userLogout, updateUsersName, updateUsername })(Profile);

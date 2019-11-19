@@ -6,7 +6,7 @@ $roboto: 'Roboto Slab', serif;
 $wallpoet: 'Wallpoet', cursive;
 
 @mixin sidemenu($sidemenu_width) {
-  background: $a;
+  background-color: rgba(8, 28, 35, 0.473);
   position: fixed;
   right: 0;
   top: 10vh;
@@ -40,7 +40,7 @@ $wallpoet: 'Wallpoet', cursive;
     align-items: center;
     height: 10vh;
     width: 100vw;
-    background: $a;
+    background-color: rgba(8, 28, 35, 0.473);
     position: fixed;
   }
   

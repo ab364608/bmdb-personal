@@ -35,14 +35,13 @@ class ProfileImage extends Component {
     }
 
     handleImg = async () => {
-        await axios.put(`/api/profile/img/${this.props.user.id}`, {
+        await axios.put(`/api/profile/img/${this.props.user_id}`, {
             img: this.state.profileURL
         });
         alert('Profile Image Changed');
     }
 
     render() {
-        console.log(this.state.profileURL)
         return (
             <div className='firebase-container'>
                 <h1 className='profile-img-text'>Profile Image</h1>

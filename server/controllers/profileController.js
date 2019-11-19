@@ -1,15 +1,33 @@
 const bcrypt = require('bcryptjs');
 
-const editUserProfile = async (req, res) => {
+const editUserPassword = async (req, res) => {
     const db = req.app.get('db');
     const { id } = req.params;
-    const { username, password, name } = req.body;
+    const { password } = req.body;
     
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(password, salt);
-    const editedProfile = await db.edit_user_info([id, username, hashedPassword, name]);
+    const editedPassword = await db.edit_user_password([id, hashedPassword]);
     
-    res.status(200).json(editedProfile);
+    res.status(200).json(editedPassword);
+}
+
+const editUsersName = (req, res) => {
+    const db = req.app.get('db');
+    const { id } = req.params;
+    const { name } = req.body;
+
+    const updateUsersName = db.edit_users_name(id, name);
+    res.status(200).json(updateUsersName)
+}
+
+const editUsername = (req, res) => {
+    const db = req.app.get('db');
+    const { id } = req.params;
+    const { username } = req.body;
+
+    const updateUsername = db.edit_username(id, username);
+    res.status(200).json(updateUsername)
 }
 
 const updateProfileImg = async (req, res) => {
@@ -30,7 +48,9 @@ const getProfileImg = async (req, res)  => {
 }
 
 module.exports = {
-    editUserProfile,
+    editUserPassword,
     updateProfileImg,
-    getProfileImg
+    getProfileImg,
+    editUsersName,
+    editUsername
 }

@@ -10,7 +10,8 @@
           align-items: center;
   height: 10vh;
   width: 100vw;
-  background: #081C23;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3333337e), to(rgba(8, 28, 35, 0.616)));
+  background-image: linear-gradient(#3333337e, rgba(8, 28, 35, 0.616));
   position: fixed;
 }
 
@@ -206,12 +207,17 @@
   }
 }
 
+.signup-background {
+  background: #333333;
+  padding-top: 20vh;
+}
+
 .below__nav {
   padding-top: 10vh;
 }
 
 .register-form {
-  height: 60vh;
+  height: 70vh;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,7 +229,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20vh;
 }
 
 .register-inputs {

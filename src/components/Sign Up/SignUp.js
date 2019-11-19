@@ -30,7 +30,7 @@ class SignUp extends Component {
     render() {
         // console.log(this.props.username)
         return (
-            <div className="home-background">
+            <div className="signup-background">
             <div className='below__nav'>
                 <form className='register-form' type='submit'>
                     <div className='register-inputs'>
