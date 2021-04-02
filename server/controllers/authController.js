@@ -24,10 +24,10 @@ const register = async (req, res) => {
 const login = async (req, res) => {
     const db = req.app.set('db');
     const {username, password} = req.body;
-
+    console.log(username)
     const checkedUser = await db.get_users([username]);
     if(checkedUser.length === 0) {
-        res.status(401).json({error: 'Wrong username or password, headass boi'})
+        res.status(401).json({error: 'Wrong username or password. Please try again.'})
     }
 
     const existingUser = await bcrypt.compare(password, checkedUser[0].password);
@@ -39,7 +39,7 @@ const login = async (req, res) => {
         };
         return res.json(req.session.user);
     } else {
-        return res.status(403).json({error: 'Wrong username or password, neckass boi'})
+        return res.status(403).json({error: 'Wrong username or password. Please try again.'})
     }
 }
 

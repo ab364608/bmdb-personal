@@ -5,7 +5,9 @@ const session = require('express-session');
 
 const app = express();
 
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, NODE_TLS_REJECT_UNAUTHORIZED } = process.env;
+
+
 
 const AC = require('./controllers/authController');
 const AM = require('./middleware/authMiddleware');
@@ -32,6 +34,7 @@ app.use(
     })
 );
 
+
 app.use(express.json());
 app.use( express.static( `${__dirname}/../build` ) );
 
@@ -56,3 +59,6 @@ app.get('/auth/logout', AC.logout);
 app.listen(SERVER_PORT, () => {
     console.log(`Running on Port: ${SERVER_PORT}`);
 })
+if ("development" == app.get("env")) {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}

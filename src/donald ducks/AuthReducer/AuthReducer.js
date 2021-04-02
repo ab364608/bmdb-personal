@@ -32,9 +32,11 @@ export const resetInputs = () => {
 }
 
 export const userLogin = (username, password) => {
+    console.log(username)
     return {
         type: USER_LOGIN,
-        payload: axios.post('/auth/login', {
+        payload: 
+        axios.post('/auth/login', {
             username,
             password
         })
